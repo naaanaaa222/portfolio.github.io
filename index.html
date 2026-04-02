@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diana MAI — Portfolio</title>
+  <meta name="description" content="Portfolio de Diana MAI, étudiante en BUT Science des Données. Découvrez mes projets data, mes compétences et mon parcours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ──────────────────────────────────────────
+       VARIABLES & RESET
+    ────────────────────────────────────────── */
+    <!-- :root {
+      --ink:       #1a1a1a;
+      --muted:     #6b6b6b;
+      --surface:   #f7f5f2;
+      --white:     #ffffff;
+      --accent:    #2d5a3d;
+      --accent-lt: #e8f0eb;
+      --border:    #e0ddd8;
+      --tag-bg:    #efefed;
+      --nav-h:     64px;
+      --radius:    6px;
+      --max:       1100px;
+    } -->
+<!-- :root {
+  /* Textes — légèrement bleutés */
+  --ink:      #1a1825;     /* quasi-noir à teinte indigo */
+  --muted:    #6b6880;     /* gris-violet au lieu de gris pur */
+
+  /* Surfaces — lavande très douce */
+  --surface:  #f0eef8;     /* fond sections paires */
+  --white:    #fafafe;     /* fond principal, légèrement froid */
+
+  /* Vert — conservé intact */
+  --accent:    #2d5a3d;
+  --accent-lt: #e3ede6;
+
+  /* Violet — nouveau secondaire */
+  --violet:    #6b5b95;    /* violet moyen pour accents décoratifs */
+  --violet-lt: #eceaf5;    /* violet clair pour tags, hover */
+
+  /* Bordures & tags */
+  --border:   #d8d5eb;     /* lilas clair */
+  --tag-bg:   #eceaf5;     /* fond tags violet pâle */
+
+  /* Rayon — inchangé */
+  --nav-h: 64px;
+  --radius: 6px;
+  --max: 1100px;
+} -->
+<!-- :root {
+  /* Textes — bleu nuit profond (tiré du fond de la photo) */
+  --ink:      #1a1e3a;     /* bleu-noir */
+  --muted:    #5a6a8a;     /* bleu-gris moyen */
+
+  /* Surfaces — bleu ciel très désaturé (fond de ta photo) */
+  --surface:  #eef2fb;     /* bleu pâle pour sections */
+  --white:    #f6f8fd;     /* fond principal, quasi-blanc bleuté */
+
+  /* Vert accent — conservé intact */
+  --accent:    #2d5a3d;
+  --accent-lt: #e3ede6;
+
+  /* Bordures & tags — bleu clair */
+  --border:   #c8d4ef;     /* bleu lavande clair */
+  --tag-bg:   #dde5f7;     /* fond tags bleu pâle */
+
+  --nav-h: 64px;
+  --radius: 6px;
+  --max: 1100px;
+} -->
+<!-- :root {
+  /* ── TEXTES ── */
+  --ink:      #1a1830;     /* bleu-nuit profond */
+  --muted:    #6860a0;     /* violet-gris moyen */
+
+  /* ── SURFACES ── */
+  --white:    #ffffff;     /* fond principal blanc pur */
+  --surface:  #f2f0fb;     /* sections paires — lavande très pâle */
+
+  /* ── ACCENT PRINCIPAL — violet ── */
+  --accent:    #5b4fcf;    /* violet vif, boutons et liens actifs */
+  --accent-lt: #ebe8fa;    /* violet pâle, fond hover */
+
+  /* ── VERT CONSERVÉ — uniquement btn-primary ── */
+  --green:     #2d5a3d;
+  --green-lt:  #e3ede6;
+
+  /* ── BORDURES & TAGS ── */
+  --border:   #ccc8f0;     /* lavande clair */
+  --tag-bg:   #e8e5f8;     /* fond tags violet pâle */
+
+  --nav-h: 64px;
+  --radius: 6px;
+  --max: 1100px;
+} -->
+:root {
+  /* ── TEXTES ── */
+  --ink:      #1a1e35;     /* bleu-nuit, #00001e amplifié */
+  --muted:    #5a6a8a;     /* bleu-gris moyen */
+
+  /* ── SURFACES ── */
+  --white:    #ffffff;     /* fond principal blanc pur */
+  --surface:  #eef2fb;     /* sections paires — bleu ciel très pâle */
+
+  /* ── ACCENT — bleu photo (#4b7dc8) ── */
+  --accent:    #4b7dc8;    /* bleu ciel moyen, tiré directement de ta photo */
+  --accent-lt: #dde6f7;    /* bleu très pâle */
+
+  /* ── BORDURES & TAGS ── */
+  --border:   #c2ceeb;     /* bleu lavande clair */
+  --tag-bg:   #e4eaf8;     /* fond tags bleu pâle */
+
+  --nav-h: 64px;
+  --radius: 6px;
+  --max: 1100px;
+}
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* ──────────────────────────────────────────
+       TYPOGRAPHY
+    ────────────────────────────────────────── */
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; line-height: 1.15; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 600; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 400; color: var(--ink); 
+background: linear-gradient(90deg, #4b7dc8 0%, #7d96e1 100%);
+  /* bleu photo foncé → bleu photo clair, les 2 couleurs de ta photo */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;}
+    h3 { font-size: 1.2rem; font-weight: 600; }
+    p  { font-size: 1rem; color: var(--muted); max-width: 62ch; }
+    a  { color: inherit; text-decoration: none; }
+    strong { font-weight: 500; color: var(--ink); }
+
+    /* ──────────────────────────────────────────
+       LAYOUT UTILITIES
+    ────────────────────────────────────────── */
+    .container {
+      width: 90%;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    section {
+      padding: 96px 0;
+    }
+    section:nth-child(even) {
+      background: var(--surface);
+    }
+    .section-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .divider {
+      width: 36px;
+      height: 2px;
+      <!-- background: var(--accent); -->
+	  background: linear-gradient(90deg, #4b7dc8, #96affa);
+      margin: 20px 0 40px;
+    }
+    .tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin: 3px 3px 3px 0;
+    }
+    .tag.accent {
+      background: var(--accent-lt);
+      color: var(--accent);
+    }
+
+    /* ──────────────────────────────────────────
+       NAVIGATION
+    ────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+	  white-space: nowrap;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--ink); }
+    .nav-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      transition: all 0.2s;
+    }
+    .nav-cv:hover { background: var(--accent); color: var(--white); }
+
+    /* Mobile nav */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s; }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      z-index: 99;
+    }
+    .mobile-menu ul { list-style: none; text-align: center; }
+    .mobile-menu li { padding: 12px 0; }
+    .mobile-menu a { font-size: 0.9rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    @media (max-width: 1100px) {
+      .nav-links, .nav-cv { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu.open { display: block; }
+    }
+
+    /* ──────────────────────────────────────────
+       HERO
+    ────────────────────────────────────────── */
+    #accueil {
+      padding-top: calc(var(--nav-h) + 80px);
+      padding-bottom: 100px;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: var(--white);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+    .hero-title { margin-bottom: 8px; }
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 52ch;
+      line-height: 1.5;
+    }
+    .hero-promise {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--ink);
+      border-left: 2px solid var(--accent);
+      padding-left: 18px;
+      margin-bottom: 40px;
+      max-width: 46ch;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #3a6ab5; transform: translateY(-1px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
+.hero-photo {
+  width: 200px;
+  height: 260px;
+  border-radius: 24px;        /* ← la valeur qui change tout */
+  background: var(--accent-lt);
+  border: 3px solid var(--border);
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+    .hero-photo svg { width: 60px; height: 60px; fill: var(--accent); opacity: 0.4; }
+    @media (max-width: 680px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo { width: 100px; height: 100px; order: -1; }
+    }
+
+    /* ──────────────────────────────────────────
+       À PROPOS
+    ────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .about-info { margin-top: 32px; text-align: right}
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .info-row:first-child { border-top: 1px solid var(--border); }
+    .info-label { color: var(--muted); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .info-val { font-weight: 400; color: var(--ink); }
+    .social-links { margin-top: 28px; display: flex; gap: 14px; }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 7px 14px;
+      border-radius: var(--radius);
+      transition: all 0.2s;
+    }
+    .social-link:hover { color: var(--ink); border-color: var(--ink); }
+    @media (max-width: 680px) {
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* ──────────────────────────────────────────
+       FORMATION & PARCOURS
+    ────────────────────────────────────────── */
+    .timeline { margin-top: 40px; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 24px;
+      padding-bottom: 40px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 130px;
+      top: 8px;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-date {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      padding-top: 3px;
+      text-align: right;
+    }
+    .timeline-content { padding-left: 24px; }
+    .timeline-content h3 { margin-bottom: 4px; }
+    .timeline-org {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+    .timeline-content p { font-size: 0.88rem; color: var(--muted); margin-bottom: 10px; max-width: 100%;}
+    .timeline-dot {
+      position: absolute;
+      left: 125px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid var(--white);
+    }
+.img-sunny {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin: 12px 0;
+  display: block;
+}
+    @media (max-width: 560px) {
+      .timeline-item { grid-template-columns: 1fr; gap: 6px; }
+      .timeline-item::before, .timeline-dot { display: none; }
+      .timeline-date { text-align: left; }
+      .timeline-content { padding-left: 0; }
+    }
+
+
+/* LOGOS TIMELINE */
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.org-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  object-fit: contain;
+  background: #fff;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.org-logo-initial {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--accent-lt);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+    /* ──────────────────────────────────────────
+       COMPÉTENCES
+    ────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .skill-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .skill-icon { font-size: 1.5rem; margin-bottom: 12px; }
+    .skill-card h3 { font-size: 1rem; margin-bottom: 12px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+    /* ──────────────────────────────────────────
+       PROJETS
+    ────────────────────────────────────────── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .project-header {
+      background: var(--accent-lt);
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .project-icon {
+      width: 44px; height: 44px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .project-header h3 { font-size: 1.05rem; font-family: 'DM Sans', sans-serif; color: var(--ink); }
+    .project-date { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+    .project-body { padding: 24px 28px; flex: 1; }
+    .project-body p { font-size: 0.88rem; margin-bottom: 16px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 20px; }
+    .project-footer {
+      padding: 16px 28px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+    }
+    .project-link {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+    .project-link:hover { gap: 8px; }
+
+    /* ──────────────────────────────────────────
+       CONTACT
+    ────────────────────────────────────────── */
+    #contact { text-align: center; }
+    #contact .container { max-width: 580px; }
+    #contact h2 { margin-bottom: 12px; }
+    #contact p { margin: 0 auto 40px; }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+/* FORMULAIRE DE CONTACT */
+.contact-form {
+  max-width: 560px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #b0aba4;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-lt);
+}
+
+.form-group textarea {
+  min-height: 130px;
+}
+
+.form-submit {
+  text-align: center;
+}
+
+.form-success {
+  display: none;
+  background: var(--accent-lt);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: center;
+}
+    /* ──────────────────────────────────────────
+       FOOTER
+    ────────────────────────────────────────── */
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    footer p {
+      font-size: 0.78rem;
+      color: var(--border);
+      margin: 0 auto;
+    }
+    footer a { color: var(--accent); }
+
+    /* ──────────────────────────────────────────
+       ANIMATIONS
+    ────────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Active nav */
+    .nav-links a.active { color: var(--ink); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#accueil" class="nav-logo">DM</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#accueil"  class="active">Accueil</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#formation">Formation</a></li>
+	  <li><a href="#experience">Expériences</a></li>
+	  <li><a href="#benevolat">Bénévolat</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="CV_Diana_MAI.pdf" class="nav-cv" target="_blank" download>
+      ↓ CV
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#accueil"     onclick="closeMobile()">Accueil</a></li>
+    <li><a href="#apropos"     onclick="closeMobile()">À propos</a></li>
+    <li><a href="#formation"   onclick="closeMobile()">Formation</a></li>
+	<li><a href="#experience" onclick="closeMobile()">Expériences</a></li>
+	<li><a href="#benevolat" onclick="closeMobile()">Bénévolat</a></li>
+    <li><a href="#competences" onclick="closeMobile()">Compétences</a></li>
+    <li><a href="#projets"     onclick="closeMobile()">Projets</a></li>
+    <li><a href="#contact"     onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     SECTION 1 — ACCUEIL / HERO
+═══════════════════════════════════════ -->
+<section id="accueil">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-text">
+        <p class="hero-eyebrow">Data Analyst Junior</p>
+        <h1 class="hero-title">
+          Diana <em>MAI</em>
+        </h1>
+        <p class="hero-subtitle">Étudiante en BUT Science des Données · Université Paris Cité</br>Future Stagiaire Big Data · INSERM (Paris-Saclay)</p>
+        <p class="hero-promise">
+          Je transforme des données brutes en analyses claires et actionnables,<br>
+          de la collecte à la visualisation, en autonomie comme en équipe.
+        </p>
+        <div class="hero-actions">
+          <a href="#projets" class="btn-primary">Voir mes projets →</a>
+          <a href="CV_Diana_MAI.pdf" class="btn-secondary" target="_blank" download>↓ Télécharger mon CV</a>
+        </div>
+      </div>
+
+      <!-- Photo de profil -->
+      <div class="hero-photo" id="heroPhoto">
+		<img src="photo_id.jpg" alt="Diana MAI" style="width:100%;height:100%;object-fit:cover;" />
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg> -->
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SECTION 2 — À PROPOS
+═══════════════════════════════════════ -->
+<section id="apropos">
+  <div class="container fade-in">
+    <span class="section-label">À propos</span>
+    <h2>Qui suis-je ?</h2>
+    <div class="divider"></div>
+
+    <div class="about-grid">
+      <div>
+        <p>
+          Bienvenue sur mon e-portfolio. </br></br> Je suis Diana MAI, étudiante en deuxième année de BUT Science des Données à l'IUT Paris Rives de Seine. Ce parcours m'a permis de développer une formation solide en statistique et informatique décisionnelle.
+		  Je réalise prochainement un stage en Big Data à l'INSERM (ENS Paris-Saclay), où j'étudierai l'association entre évènements traumatiques et troubles de la santé mentale.
+        </p>
+        <p style="margin-top:18px;">
+          En vue d'intégrer un cycle ingénieur, je suis actuellement à la recherche d'une alternance de 36 mois à partir de septembre 2026, dans les domaines de la statistique appliquée et tout ce qui touche à la data science.</br></br>
+		  N'hésitez pas à parcourir mes projets et mon parcours sur ce site.
+        </p>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/maidiana06/" target="_blank" class="social-link">
+            <!-- LinkedIn SVG -->
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57A1.32 1.32 0 0 1 14.24 12.25C15.04 12.25 15.5 12.81 15.5 13.55V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/naaanaaa222" target="_blank" class="social-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="about-info">
+        <div class="info-row">
+          <span class="info-label">Formation</span>
+          <span class="info-val">BUT2 Science des Données</br>Parcours Exploration et Modélisation Statistique</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Établissement</span>
+          <span class="info-val">IUT de Paris – Rives de Seine</br>Université Paris Cité</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Localisation</span>
+          <span class="info-val">Paris (75012), FRANCE</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Langues</span>
+          <span class="info-val">Français (C2 natif)</br> Anglais (C2 bilingue)</br> Vietnamien (C2 maternel)</br> Espagnol (B1+)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Disponibilité</span>
+          <span class="info-val">Alternance de 36 mois </br>Dès septembre 2026</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Contact</span>
+          <span class="info-val"><a href="mailto:maidiana511@gmail.com" style="color:var(--accent)">maidiana511@gmail.com</a></br>+33 6 50 06 10 92</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SECTION 3 — FORMATION & PARCOURS
+═══════════════════════════════════════ -->
+<section id="formation">
+  <div class="container fade-in">
+    <span class="section-label">Parcours</span>
+    <h2>Formation </h2>
+    <div class="divider"></div>
+
+    <div class="timeline">
+
+      <!-- Entrée 1 — Formation actuelle -->
+      <div class="timeline-item">
+        <div class="timeline-date">2024 – 2026</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          
+			<div class="timeline-header">
+			  <img class="org-logo" src="logo_iut.png" alt="IUT de Paris Rives de Seine">
+			  <div>
+				<h3>BUT Science des Données</h3>
+				<p class="timeline-org">Organisation · Durée</p>
+			  </div>
+			</div>
+          <p class="timeline-org">IUT Paris – Rives de Seine, Université Paris Cité</p>
+          <p>Parcours complet en analyse et valorisation des données : statistiques, programmation (Python, R), bases de données (SQL), visualisation et communication scientifique.</p>
+          <span class="tag accent">En cours</span>
+          <span class="tag">Exploration et Modélisation Statistique</span>
+        </div>
+      </div>
+
+      <!-- Entrée 2 — Baccalauréat -->
+      <div class="timeline-item">
+        <div class="timeline-date">2020 - 2023</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+			  <img class="org-logo" src="logo_civ.jpg" alt="logo CIV">
+			  <div>
+				<h3>Baccalauréat Général Scientifique International</h3>
+				<p class="timeline-org">Centre International de Valbonne</p>
+			  </div>
+			</div>
+          <p class="timeline-org"> <a href="https://civfrance.com/" style="color:var(--accent)">Lycée International de Valbonne, Sophia-Antipolis</a></p>
+          <span class="tag">Mathématiques</span>
+          <span class="tag">Physique-Chimie</span>
+		  <span class="tag">Numérique et Sciences Informatiques</span>
+		  <span class="tag">Option Internationale Américaine</span>
+        </div>
+      </div>
+
+      <!-- Entrée 3 — Baccalauréat -->
+      <div class="timeline-item">
+        <div class="timeline-date">2016 - 2020</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+			  <img class="org-logo" src="logo_civ.jpg" alt="logo CIV">
+			  <div>
+				<h3>Diplôme National du Brevet International</h3>
+				<p class="timeline-org">Centre International de Valbonne</p>
+			  </div>
+			</div>
+          <p class="timeline-org"> <a href="https://civfrance.com/" style="color:var(--accent)">Centre International de Valbonne, Sophia-Antipolis</a>
+          <p>Séjour linguistique d'une semaine en Angleterre dans une famille d'accueil (Shakespeare's birthplace, Anne Hathaway's Cottage, Shakespeare's Schoolroom & Guildhall, Warwick Castle, Globe Theatre Exhibition)</p>
+		  <p>Visite des laboratoires du<a href="https://www.cnrs.fr/fr" style="color:var(--accent)"> CNRS </a>à Sophia-Antipolis</p>
+		  <p>Participation à la radio du centre culturel <a href="https://almacineradio.fr/la-radio/" style="color:var(--accent)"> (Clin d’œil FM 106.1) </a></p>
+		  <span class="tag">Option Internationale Anglaise</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- SECTION : EXPÉRIENCES PROFESSIONNELLES -->
+<section id="experience">
+  <div class="container fade-in">
+    <span class="section-label">Parcours</span>
+    <h2>Expériences professionnelles</h2>
+    <div class="divider"></div>
+    <div class="timeline">
+
+      <!-- Inserm -->
+      <div class="timeline-item">
+        <div class="timeline-date">Avril 2026<br>Juin 2026</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+			  <img class="org-logo" src="logo_inserm.png" alt="logo INSERM">
+			  <div>
+				<h3>Stagiaire Big Data</h3>
+				<p class="timeline-org">INSERM</p>
+			  </div>
+			</div>
+          <p class="timeline-org">Inserm · Gif-sur-Yvette, FRANCE · (Hybride)</p>
+          <p>Étude des associations entre évènements traumatiques et troubles de la santé mentale. Data management et construction de nouvelles variables, définition de la stratégie d'analyses statistiques et mise en œuvre sur R, interprétation des résultats et rédaction du rapport de stage.</p>
+          <span class="tag accent">En cours</span>
+          <span class="tag">R</span>
+          <span class="tag">Statistiques</span>
+          <span class="tag">Big Data</span>
+        </div>
+      </div>
+
+      <!-- UNIQLO CDI Paris -->
+      <div class="timeline-item">
+        <div class="timeline-date">Septembre 2025<br>Février 2026</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+			  <img class="org-logo" src="logo_uniqlo.png" alt="logo UNIQLO">
+			  <div>
+				<h3>Vendeuse polyvalente — CDI temps partiel</h3>
+				<p class="timeline-org">UNIQLO</p>
+			  </div>
+			</div>
+          <p class="timeline-org">UNIQLO · Paris, FRANCE</p>
+          <p>Service client multilingue auprès d'une clientèle internationale, gestion des stocks (technologie RFID), réassortiment et réagencement des articles. Force de proposition dans le cadre du Weekly Hanbai Keikaku, en collaboration avec les Visual Merchandisers.</p>
+          <span class="tag">Relation client</span>
+          <span class="tag">Gestion des stocks</span>
+          <span class="tag">Multilingue</span>
+        </div>
+      </div>
+
+      <!-- Amorino -->
+      <div class="timeline-item">
+        <div class="timeline-date">Juin 2025</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+			  <img class="org-logo" src="logo_amorino.jpg" alt="logo AMORINO">
+			  <div>
+				<h3>Serveuse Gelato Artist</h3>
+				<p class="timeline-org">AMORINO</p>
+			  </div>
+			</div>
+          <p class="timeline-org">Amorino · Antibes, FRANCE</p>
+          <p>Accueil et conseil clientèle, prise de commandes, confection des produits, encaissement, gestion des stocks et réception des livraisons.</p>
+          <span class="tag">Commerce</span>
+          <span class="tag">Relation client</span>
+        </div>
+      </div>
+
+      <!-- UNIQLO Nice été 2025 -->
+      <div class="timeline-item">
+        <div class="timeline-date">Juillet – Août 2025</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+			  <img class="org-logo" src="logo_uniqlo.png" alt="logo UNIQLO">
+			  <div>
+				<h3>Vendeuse polyvalente — CDI temps partiel</h3>
+				<p class="timeline-org">UNIQLO</p>
+			  </div>
+			</div>
+          <p class="timeline-org">UNIQLO · Nice, FRANCE</p>
+          <p>Mission saisonnière : réassortiment, gestion des stocks, service client et collaboration en surface de vente.</p>
+          <span class="tag">Saisonnier</span>
+          <span class="tag">Gestion des stocks</span>
+        </div>
+      </div>
+
+      <!-- UNIQLO Nice ouverture -->
+      <div class="timeline-item">
+        <div class="timeline-date">Avril – Juillet 2024</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+			  <img class="org-logo" src="logo_uniqlo_jap.png" alt="logo UNIQLO JAPON">
+			  <div>
+				<h3>Vendeuse polyvalente — CDI temps partiel</h3>
+				<p class="timeline-org">UNIQLO</p>
+			  </div>
+			</div>
+          <p class="timeline-org">UNIQLO · Nice, FRANCE</p>
+          <p>Participation à l'ouverture du 28e magasin UNIQLO en France (Nice Iconic). Mise en place des articles, daily meetings de suivi des ventes, gestion des livraisons et des stocks, service client multilingue.</p>
+          <span class="tag">Ouverture de magasin</span>
+          <span class="tag">Relation client</span>
+          <span class="tag">RFID</span>
+        </div>
+      </div>
+
+      <!-- McDonald's -->
+      <div class="timeline-item">
+        <div class="timeline-date">Janvier – Février 2024</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+			  <img class="org-logo" src="logo_mcdo.png" alt="logo MCDO">
+			  <div>
+				<h3>Équipière polyvalente — CDI temps partiel</h3>
+				<p class="timeline-org">MCDO</p>
+			  </div>
+			</div>
+          <p class="timeline-org">McDonald's · Antibes, FRANCE</p>
+          <span class="tag">Restauration rapide</span>
+          <span class="tag">Travail en équipe</span>
+        </div>
+      </div>
+
+      <!-- Pharmacie -->
+      <div class="timeline-item">
+        <div class="timeline-date">Juillet – Août 2023</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+			  <img class="org-logo" src="logo_pharmacie.png" alt="logo PHARMACIE">
+			  <div>
+				<h3>Préparatrice en pharmacie</h3>
+				<p class="timeline-org">PHARMACIE</p>
+			  </div>
+			</div>
+          <p class="timeline-org">Pharmacie Le ROI SOLEIL</p>
+          <p>Inventaire via automate, gestion des stocks, réassortiment, préparation de commandes et réception des livraisons journalières.</p>
+          <span class="tag">Gestion des stocks</span>
+          <span class="tag">Rigueur</span>
+        </div>
+      </div>
+
+      <!-- Stage pharmacie -->
+      <div class="timeline-item">
+        <div class="timeline-date">Janvier 2020</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+			  <img class="org-logo" src="logo_pharmacie.png" alt="logo PHARMACIE">
+			  <div>
+				<h3>Stage d'observation</h3>
+				<p class="timeline-org">PHARMACIE</p>
+			  </div>
+			</div>
+          <p class="timeline-org">Pharmacie WILSON</p>
+          <span class="tag">Inventaire</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION : BÉNÉVOLAT -->
+<section id="benevolat">
+  <div class="container fade-in">
+    <span class="section-label">Engagement</span>
+    <h2>Bénévolat</h2>
+    <div class="divider"></div>
+    <div class="timeline">
+
+      <!-- Tutrice -->
+      <div class="timeline-item">
+        <div class="timeline-date">Continu</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Étudiante tutrice</h3>
+          <p class="timeline-org">Cours particuliers · (Hybride)</p>
+          <p>Soutien scolaire en sciences et langues pour des élèves de la 6e à la terminale.</p>
+          <span class="tag">Pédagogie</span>
+          <span class="tag">Sciences</span>
+          <span class="tag">Langues</span>
+        </div>
+      </div>
+
+      <!-- Courir pour une fleur -->
+      <div class="timeline-item">
+        <div class="timeline-date">Annuel</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Action caritative locale</h3>
+          <p class="timeline-org">Courir pour une fleur · Antibes, FRANCE</p>
+          <p>Participation à un événement sportif annuel visant la récolte de fonds pour une cause solidaire variable chaque année.</p>
+          <span class="tag">Sport solidaire</span>
+          <span class="tag">Collecte de fonds</span>
+        </div>
+      </div>
+
+      <!-- Pagode -->
+      <div class="timeline-item">
+        <div class="timeline-date">Continu</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Activiste engagée</h3>
+          <p class="timeline-org">Pagode Từ Quang · Nice, FRANCE</p>
+          <p>Préparation et distribution de nourriture végétarienne et végane dans le cadre d'actions communautaires.</p>
+          <span class="tag">Aide alimentaire</span>
+          <span class="tag">Engagement communautaire</span>
+        </div>
+      </div>
+
+      <!-- Sunny Bank -->
+      <div class="timeline-item">
+        <div class="timeline-date">Octobre – Novembre 2017</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Bénévole</h3>
+          <p class="timeline-org">SUNNY BANK ASSOCIATION · ASEICA – From Age to Age · Mougins, FRANCE</p>
+          <p><a href="https://www.aseica.org/index.php/fr/blogfr/item/133-from-age-to-age">Initiative bénévole dans une maison de retraite anglophone, dans le cadre du programme intergénérationnel From Age to Age.</a></p>
+		  <img src="SunnyProject.png" class="img-sunny">
+          <span class="tag">Intergénérationnel</span>
+          <span class="tag">Anglophone</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 4 — COMPÉTENCES
+═══════════════════════════════════════ -->
+<section id="competences">
+  <div class="container fade-in">
+    <span class="section-label">Savoir-faire</span>
+    <h2>Compétences</h2>
+    <div class="divider"></div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <h3>Statistiques & Analyse de données</h3>
+        <div class="skill-tags">
+          <span class="tag">R</span>
+		  <span class="tag">SAS</span>
+		  <span class="tag">Power BI</span>
+		  <span class="tag">Shiny</span>
+		  <span class="tag">Excel</span>
+		  <h3>Statistiques descriptives, inférentielles, prédictives</h3>
+		  <h3>Modélisation statistique</h3>
+		  <h3>Régression Linéaire</h3>
+		  <h3>Modélisation statistique</h3>
+		  <h3>Classification et méthodes factorielles</h3>
+		  <h3>Séries temporelles</h3>
+		  <h3>Tests d'hypothèses pour l'analyse bi-variée</h3>
+		  <h3>Validation de modèles</h3>
+		  <h3>Méthodologie d'enquête</h3>
+		  <h3>Techniques de sondage</h3>
+		  <h3>Echantillonnage et plan d'expérience</h3>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <h3>Informatique décisionnelle</h3>
+        <div class="skill-tags">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+		  <span class="tag">HTML / CSS</span>
+		  <span class="tag">Microsoft Office</span>
+		  <h3>Requêtes et gestion de bases de données</h3>
+		  <h3>Visualisation de données</h3>
+		  <h3>Tableaux de bords interactifs</h3>
+		  <h3>Reporting d'une analyse multivariée et aide à la décision</h3>
+		  <h3>Collecte et automatisation de traitement de données</h3>
+		  <h3>Integrations de données dans un datawarehouse</h3>
+		  <h3>Technologies et Développement Web</h3>
+		  <h3>Systèmes d'information décisionnels</h3>
+        </div>
+      </div>
+	  
+	  <div class="skill-card">
+        <div class="skill-icon">📈🤝🌐</div>
+        <h3>Compétences transversales & Langues</h3>
+        <div class="skill-tags">
+          <span class="tag">RGPD</span>
+          <span class="tag">Gestion de projet</span>
+          <span class="tag">Travail en équipe</span>
+          <span class="tag">Communication</span>
+          <span class="tag">Rigueur scientifique</span>
+		  <h3>Anglais scientifique et professionnel</h3>
+		  <h3>Cadre juridique et économique de la donnée</h3>
+		  <h3>Communication scientifique et argumentation</h3>
+		  <h3>Conformité réglementaire pour analyser des données</h3>
+		  <h3>Données de l'environnement entrepreneurial et économique</h3>
+		  
+          <span class="tag">Français — C2 natif</span>
+          <span class="tag">Anglais — C2 bilingue</span>
+          <span class="tag">Vietnamien - C2 maternel</span>
+          <span class="tag">Espagnol - B1+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SECTION 5 — PROJETS
+═══════════════════════════════════════ -->
+<section id="projets">
+  <div class="container fade-in">
+    <span class="section-label">Réalisations</span>
+    <h2>Conduites de projets</h2>
+    <div class="divider"></div>
+    <p style="margin-bottom:40px;">Projets académiques illustrant mes compétences en analyse de données.</p>
+
+    <div class="projects-grid">
+
+      <!-- Projet 1 -->
+      <article class="project-card">
+        <div class="project-header">
+          <div class="project-icon">📊</div>
+          <div>
+            <h3>Analyse de données d'une étude observationnelle en épidémiologie clinique multicentrique</h3>
+            <p class="project-date">Février 2025 - Juin 2025</p>
+          </div>
+        </div>
+        <div class="project-body">
+          <p>- Objectif : Tester l’efficacité d’une technique de réanimation </br>- Gestion de données : nettoyage, recodage, création d'une base de données propre (R)</br>- Analyse de données : tests et indicateurs statistiques, modélisation/reporting, datavisualization </br>- Valorisation des résultats : rapports technique et statistique, soutenance orale</br>- Conduite de projet : création de plannings prévisionnel et réel (Project)</p>
+          <div class="project-tags">
+            <span class="tag">R</span>
+			<span class="tag">Microsoft Project</span>
+            <span class="tag">Microsoft Excel</span>
+            <span class="tag">Microsoft PowerPoint</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="rapport_projet.pdf" target="_blank" class="project-link">→ Voir le rapport </a></br>
+		  <a href="descriptif_donnees_projet.docx" target="_blank" class="project-link">→ Voir le descriptif des données </a>
+          <!-- <a href="[LIEN_RAPPORT.pdf]" target="_blank" class="project-link">Rapport ↗</a> -->
+        </div>
+      </article>
+
+      <!-- Projet 2 -->
+      <article class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🤖</div>
+          <div>
+            <h3>Mesure de la performance de CAPGEMINI à travers ses KPI</h3>
+            <p class="project-date">Juin 2025</p>
+          </div>
+        </div>
+        <div class="project-body">
+          <p>- Evaluation des indicateurs financiers / extra financiers clés (DEU 2024)</br>- Rédaction d'un rapport synthétique analysant sa performance relative et ses modalités de mesure dans l'entreprise</p>
+          <div class="project-tags">
+            <span class="tag">Gestion</span>
+            <span class="tag">Economie</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="rapport_capgemini.pdf" target="_blank" class="project-link">→ Voir le rapport </a>
+        </div>
+      </article>
+
+      <!-- Projet 3 -->
+      <article class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🗃️</div>
+          <div>
+            <h3>Concours national Dataviz 2025 - INSEE</h3>
+            <p class="project-date">22 Mai 2025</p>
+          </div>
+        </div>
+        <div class="project-body">
+          <p>- Challenge sur une journée : Produire une infographie claire, originale et impactante à partir de données brutes fournies par l'INSEE.</br>- Thème : Accès aux études supérieures en fonction des départements en IDF</br>- Sélection, nettoyage, traitement de données, création de graphiques sur Excel / PowerBI / PowerQuery</br>- Restitution orale devant jury (constitué de professeurs de maths/statistiques/programmation/anglais/communication et membres de l'INSEE)</p>
+          <div class="project-tags">
+            <span class="tag">Microsoft PowerBI</span>
+            <span class="tag">Microsoft PowerQuery</span>
+            <span class="tag">Microsoft Excel</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="challenge_infographie.pdf" target="_blank" class="project-link">→ Voir l'infographie </a></br>
+		  <a href="challenge_dataviz.pdf" target="_blank" class="project-link">→ Voir l'affiche du challenge </a>
+        </div>
+      </article>
+
+    </div>
+    <!-- Ajoute autant de projets que nécessaire en copiant un article.project-card -->
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SECTION 6 — CONTACT
+═══════════════════════════════════════ -->
+<section id="contact" style="background:var(--surface)">
+  <div class="container fade-in">
+    <span class="section-label">Contact</span>
+    <h2>Travaillons ensemble</h2>
+    <div class="divider" style="margin:20px auto 32px;"></div>
+    <p style="text-align:center;">
+      Je suis disponible pour des opportunités d'alternance à partir de septembre 2026.
+      N'hésitez pas à me contacter ou à consulter mon CV.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:maidiana511@gmail" class="btn-primary">
+        ✉ M'écrire
+      </a>
+      <a href="CV_Diana_MAI.pdf" class="btn-secondary" target="_blank" download>
+        ↓ Télécharger mon CV
+      </a>
+      <a href="https://www.linkedin.com/in/maidiana06/" class="btn-secondary" target="_blank">
+        LinkedIn ↗
+      </a>
+    </div>
+	<!-- FORMULAIRE -->
+    <form
+      class="contact-form"
+      id="contactForm"
+      action="https://formsubmit.co/maidiana511@gmail.com"
+      method="POST"
+    >
+      <!-- Options FormSubmit -->
+      <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Bonjour Diana, ..." required></textarea>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-primary">
+          Envoyer le message &rarr;
+        </button>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        ✓ Message envoyé ! Je vous répondrai dans les plus brefs délais.
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer>
+  <p>
+    © <span id="year"></span> Diana MAI — Site réalisé dans le cadre du BUT SD, IUT Paris – Rives de Seine. </br>
+    Images : libres de droits. Sources citées dans chaque projet.
+  </p>
+</footer>
+
+
+<!-- ═══════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════ -->
+<script>
+  // ── Année dynamique
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ── Hamburger menu
+  const ham = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  ham.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+
+  // ── Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  function setActive() {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 90) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+
+  // ── Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  faders.forEach(f => io.observe(f));
+</script>
+</body>
+</html>
