@@ -378,6 +378,18 @@ background: linear-gradient(90deg, #4b7dc8 0%, #7d96e1 100%);
       gap: 60px;
       align-items: start;
     }
+.timeline-content a,
+.about-info a {
+  text-decoration: underline;
+  text-underline-offset: 3px;       /* espace entre texte et soulignement */
+  text-decoration-color: var(--accent);
+  color: var(--accent);
+  transition: opacity 0.2s;
+}
+.timeline-content a:hover,
+.about-info a:hover {
+  opacity: 0.75;
+}
     .about-info { margin-top: 32px; text-align: right}
     .info-row {
       display: flex;
